@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question of support
+    url: https://www.15web.ru/contacts
+    about: We use GitHub Issues only to discuss plugin bugs and new functionality. For other questions about using the plugin or third-party packages, please use any of the communication channels listed on the page https://www.15web.ru/contacts

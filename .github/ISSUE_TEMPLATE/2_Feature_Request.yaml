@@ -1,0 +1,17 @@
+name: Feature Request
+description: New possibilities and ideas for new features and improvements
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear description of the new feature
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Exanple
+      description: |
+        A simple example of the new functionality in action (including PHP code, configuration, etc.)
+        If the new functionality modifies an existing one, include a simple before/after comparison.

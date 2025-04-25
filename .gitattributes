@@ -1,0 +1,11 @@
+*.php                          diff=php
+
+.editorconfig                  export-ignore
+.gitattributes                 export-ignore
+.github                        export-ignore
+.gitignore                     export-ignore
+composer.lock                  export-ignore
+php-cs-fixer.php               export-ignore
+phpstan-config.neon            export-ignore
+psalm.xml                      export-ignore
+rector.config.php              export-ignore
