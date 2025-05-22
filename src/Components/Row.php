@@ -16,6 +16,7 @@ use Filament\Infolists\Infolist;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NestedSet;
+use Kalnoy\Nestedset\QueryBuilder;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Session;
@@ -72,9 +73,11 @@ final class Row extends Component implements HasForms, HasActions, HasInfolists
         $form = $this->component::getEditForm();
 
         if (config('filament-tree.show-parent-select-while-edit')) {
+            $model = $this->component::getModel();
+
             array_unshift(
                 $form,
-                ParentSelect::make($this->component::getModel()),
+                ParentSelect::make($model instanceof QueryBuilder ? $model : $model::query()),
             );
         }
 
