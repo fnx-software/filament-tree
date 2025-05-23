@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Kalnoy\Nestedset\NestedSet;
 use Kalnoy\Nestedset\QueryBuilder;
+use RuntimeException;
 
 /**
  * Parent select builder
@@ -22,9 +23,14 @@ final readonly class ParentSelect
                 $query->getModel()::class::getTreeLabelAttribute(),
             );
 
+            $depth = $item->getAttribute('depth');
+            if ($depth < 1) {
+                throw new RuntimeException('The tree is corrupted, please Fix tree');
+            }
+
             $prefix = Str::repeat(
                 string: '--',
-                times: $item->getAttribute('depth'),
+                times: $depth,
             );
 
             return trim("{$prefix} {$title}");
