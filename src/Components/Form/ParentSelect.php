@@ -24,7 +24,7 @@ final readonly class ParentSelect
             );
 
             $depth = $item->getAttribute('depth');
-            if ($depth < 1) {
+            if ($depth < 0) {
                 throw new RuntimeException('The tree is corrupted, please Fix tree');
             }
 
