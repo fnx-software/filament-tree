@@ -64,6 +64,8 @@ final class Header extends Component implements HasForms, HasActions
                         ...$model->getModel()->getAttributes(),
                     ],
                 )
+                
+                ->modelLabel($model->getModel()->getModelLabel())
                 ->using(static function (array $data) use ($model): Model {
                     /** @var class-string<Model> $modelClass */
                     $modelClass = $model->getModel()::class;
@@ -80,6 +82,7 @@ final class Header extends Component implements HasForms, HasActions
             return;
         }
 
-        $action->model($model);
+        $action->model($model)
+                ->modelLabel($model->getModel()->getModelLabel());
     }
 }
